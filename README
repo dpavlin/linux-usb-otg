@@ -1,2 +1,14 @@
+Let's make Linux OTG ports useful...
+
+
 http://www.chip-community.org/index.php/Chip:_USB_hid_on_libcomposite
+
+https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets
+
+http://github.com/wismna/raspberry-pi/hackpi
+
+
+This setup has been tested on Raspberry Pi 0 and Allwinner A20 based board.
+
+
 
