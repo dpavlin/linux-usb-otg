@@ -1,12 +1,17 @@
-#!/bin/bash
+#!/bin/bash -xe
+
 # this file is from: https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets
 echo "creating composite mass-storage, serial, ethernet, hid..."
 modprobe libcomposite
 
 # assumes a disk image exists here...
-FILE=/home/pi/hardpass/usbdisk.img
+FILE=`pwd`/usbdisk.img
 mkdir -p ${FILE/img/d}
-mount -o loop,ro,offset=2048 -t vfat $FILE ${FILE/img/d}
+if [ ! -e $FILE ] ; then
+	dd if=/dev/zero of=$FILE bs=1M count=8
+	mkfs.vfat $FILE
+fi
+#mount -o loop,ro,offset=2048 -t vfat $FILE ${FILE/img/d}
 cd /sys/kernel/config/usb_gadget/
 
 mkdir -p g1
