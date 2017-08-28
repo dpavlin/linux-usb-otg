@@ -35,10 +35,10 @@ mkdir -p functions/hid.$N
 mkdir -p functions/mass_storage.$N
 
 # first byte of address must be even
-HOST="aa:00:73:74:50:43" # "HostPC"
-SELF="aa:01:64:55:53:42" # "BadUSB"
-#echo $HOST > functions/ecm.$N/host_addr
-#echo $SELF > functions/ecm.$N/dev_addr
+HOST="48:6f:73:74:50:43" # "HostPC"
+SELF="42:61:64:55:53:42" # "BadUSB"
+echo $HOST > functions/ecm.$N/host_addr
+echo $SELF > functions/ecm.$N/dev_addr
 
 echo 1 > functions/mass_storage.$N/stall
 echo 0 > functions/mass_storage.$N/lun.0/cdrom
