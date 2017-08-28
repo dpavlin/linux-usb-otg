@@ -29,16 +29,16 @@ echo "girst" > strings/0x409/manufacturer
 echo "Hardpass" > strings/0x409/product 
 
 N="usb0"
-mkdir -p functions/acm.$N
+mkdir -p functions/acm.gs0
 mkdir -p functions/ecm.$N
 mkdir -p functions/hid.$N
 mkdir -p functions/mass_storage.$N
 
 # first byte of address must be even
-HOST="48:6f:73:74:50:43" # "HostPC"
-SELF="42:61:64:55:53:42" # "BadUSB"
-echo $HOST > functions/ecm.$N/host_addr
-echo $SELF > functions/ecm.$N/dev_addr
+HOST="aa:00:73:74:50:43" # "HostPC"
+SELF="aa:01:64:55:53:42" # "BadUSB"
+#echo $HOST > functions/ecm.$N/host_addr
+#echo $SELF > functions/ecm.$N/dev_addr
 
 echo 1 > functions/mass_storage.$N/stall
 echo 0 > functions/mass_storage.$N/lun.0/cdrom
@@ -56,8 +56,8 @@ C=1
 mkdir -p configs/c.$C/strings/0x409
 echo "Config $C: ECM network" > configs/c.$C/strings/0x409/configuration 
 echo 250 > configs/c.$C/MaxPower 
-ln -s functions/acm.$N configs/c.$C/
-ln -s functions/ecm.$N configs/c.$C/
+ln -s functions/acm.gs0 configs/c.$C/
+#ln -s functions/ecm.$N configs/c.$C/
 ln -s functions/mass_storage.$N configs/c.$C/
 ln -s functions/hid.$N configs/c.$C/
 
