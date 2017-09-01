@@ -7,6 +7,8 @@ https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets
 
 http://github.com/wismna/raspberry-pi/hackpi
 
+https://github.com/torvalds/linux/blob/master/Documentation/usb/gadget-testing.txt
+
 
 This setup has been tested on Raspberry Pi 0 and Allwinner A20 based board.
 
