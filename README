@@ -6,6 +6,18 @@ To install:
 	git clone usb-otg
 	./install.sh
 
+This will create composite gandet on boot through which you can insert keystrokes,
+mount disk images, or open serial port back to arm board.
+
+I'm using Debian armbian image for all Allwinner boards with linux-image-next-sunxi kernel.
+
+This setup has been tested on:
+- Raspberry Pi 0
+- Cubieboard2 A20
+- Lamobo R1 A20
+- Cubieboard A10
+
+
 
 Based on documentation from:
 
@@ -16,9 +28,5 @@ https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets
 http://github.com/wismna/raspberry-pi/hackpi
 
 https://github.com/torvalds/linux/blob/master/Documentation/usb/gadget-testing.txt
-
-
-This setup has been tested on Raspberry Pi 0 and Allwinner A20 based board.
-
 
 
