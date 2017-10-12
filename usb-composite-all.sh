@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash -e
 
 # this file is from: https://github.com/ckuethe/usbarmory/wiki/USB-Gadgets
 echo "creating composite mass-storage, serial, ethernet, hid..."
@@ -24,9 +24,9 @@ echo 0x0100 > bcdDevice # v1.0.0
 echo 0x0200 > bcdUSB # USB2
 
 mkdir -p strings/0x409
-echo "fedcba9876543210" > strings/0x409/serialnumber
-echo "girst" > strings/0x409/manufacturer 
-echo "Hardpass" > strings/0x409/product 
+echo "deadbeef00000001" > strings/0x409/serialnumber
+echo `uname -r` > strings/0x409/manufacturer 
+echo `hostname -s` > strings/0x409/product 
 
 N="usb0"
 mkdir -p functions/acm.gs0
