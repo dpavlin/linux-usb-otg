@@ -1,5 +1,13 @@
 Let's make Linux OTG ports useful...
 
+To install:
+
+	cd /srv/
+	git clone usb-otg
+	./install.sh
+
+
+Based on documentation from:
 
 http://www.chip-community.org/index.php/Chip:_USB_hid_on_libcomposite
 
