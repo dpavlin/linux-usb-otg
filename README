@@ -3,7 +3,7 @@ Let's make Linux OTG ports useful...
 To install:
 
 	cd /srv/
-	git clone usb-otg
+	git clone https://github.com/dpavlin/usb-otg
 	./install.sh
 
 This will create composite gandet on boot through which you can insert keystrokes,
