@@ -10,7 +10,7 @@ cd /sys/kernel/config/usb_gadget/
 mkdir -p g1
 cd g1
 
-OS=`cat /home/pi/os.txt`
+OS=MS # change this to anything else to skip M$ tweaks
 HOST="48:6f:73:74:50:43"
 SELF0="42:61:64:55:53:42"
 SELF1="42:61:64:55:53:43"
@@ -24,7 +24,7 @@ echo "badc0deddeadbeef" > strings/0x409/serialnumber
 echo "wismna" > strings/0x409/manufacturer
 echo "PiZero" > strings/0x409/product
 
-if [ "$OS" != "MacOs" ]; then
+if [ "$OS" = "MS" ]; then
 	# Config 1: RNDIS
 	mkdir -p configs/c.1/strings/0x409
 	echo "0x80" > configs/c.1/bmAttributes
