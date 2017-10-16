@@ -24,7 +24,7 @@ echo 0x0100 > bcdDevice # v1.0.0
 echo 0x0200 > bcdUSB # USB2
 
 mkdir -p strings/0x409
-echo "deadbeef00000001" > strings/0x409/serialnumber
+echo `cat /proc/device-tree/serial-number` > strings/0x409/serialnumber
 echo `uname -r` > strings/0x409/manufacturer 
 echo `hostname -s` > strings/0x409/product 
 
