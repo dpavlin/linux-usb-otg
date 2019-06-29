@@ -1,6 +1,17 @@
 #!/bin/sh
 
 # https://gist.github.com/kbingham/c39c4cc7c20882a104c08df5206e2f9f
+# needs user-space part https://github.com/wlhe/uvc-gadget
+
+if [ ! -d uvc-gadget ] ; then
+	git clone https://github.com/wlhe/uvc-gadget
+	cd uvc-gadget && make
+	cd -
+fi
+
+
+# load module
+cd /sys/kernel/config/usb_gadget/ || modprobe libcomposite
 
 set -e
 #set -x
