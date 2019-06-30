@@ -1,13 +1,13 @@
 [Unit]
 Description=USB OTG gadgets
-Documentation=https://github.com/dpavlin/usb-otg
+Documentation=https://github.com/dpavlin/linux-usb-otg
 
 [Service]
 User=root
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/srv/usb-otg/usb-composite-all.sh
-ExecStop=/srv/usb-otg/usb-gadget-stop.sh
+ExecStart=/srv/linux-usb-otg/usb-composite-all.sh
+ExecStop=/srv/linux-usb-otg/usb-gadget-stop.sh
 
 [Install]
 WantedBy=multi-user.target
