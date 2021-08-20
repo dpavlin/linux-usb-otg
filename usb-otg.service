@@ -1,6 +1,7 @@
 [Unit]
 Description=USB OTG gadgets
 Documentation=https://github.com/dpavlin/linux-usb-otg
+After=systemd-udev-settle.service
 
 [Service]
 User=root
@@ -8,6 +9,11 @@ Type=oneshot
 RemainAfterExit=yes
 ExecStart=/srv/linux-usb-otg/usb-composite-all.sh
 ExecStop=/srv/linux-usb-otg/usb-gadget-stop.sh
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=usb-otg
+# where will usbdisk.img go
+WorkingDirectory=/srv/linux-usb-otg
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target
