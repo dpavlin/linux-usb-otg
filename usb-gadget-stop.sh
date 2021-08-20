@@ -1,4 +1,7 @@
 #!/bin/bash
+
+systemctl stop getty@ttyGS0.service
+
 cd /sys/kernel/config/usb_gadget/g1
 echo '' > UDC
 find configs -type l -exec rm -v {} \;
